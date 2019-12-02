@@ -12,11 +12,11 @@ public class IGUser {
     private String password;
     private String retired;
 
-    @JoinColumn(name = "igUserInfoId")
+    @PrimaryKeyJoinColumn(name="igUserId", referencedColumnName="igUserInfoId")
     @OneToOne(cascade = CascadeType.ALL)
     private IGUserInfo igUserInfo;
 
-    @JoinColumn(name = "igUserExtensionId")
+    @PrimaryKeyJoinColumn(name = "igUserId", referencedColumnName="igUserExtentionId")
     @OneToOne(cascade = CascadeType.ALL)
     private IGUserExtention igUserExtention;
 
